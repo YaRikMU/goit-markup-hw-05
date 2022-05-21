@@ -11,7 +11,7 @@
   --our-team-bg-color: #f5f4fa;
   --border-header-portfolio: #ececec;
   --socials-icon-color: #afb1b8;
-  --time-anim: 700ms cubic-bezier(0.4, 0, 0.2, 1);
+
   --box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   --portfolio-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
@@ -136,24 +136,28 @@ ul {
   color: var(--accent-color);
 }
 
-.nav-link.current::after,
-.nav-link:hover::after,
-.nav-link:focus::after {
+.nav-link.current::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   height: 4px;
   border-radius: 2px;
   width: 100%;
   background-color: var(--accent-color);
+  transition-property: background-color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
+
 .nav-link {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
   position: relative;
-  transition: var(--time-anim);
+  transition-property: color, background-color, box-shadow;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 .contact-list {
   margin-left: auto;
@@ -260,6 +264,9 @@ ul {
   font-family: inherit;
   color: currentColor;
   cursor: pointer;
+  transition-property: color, background-color, box-shadow;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 .hero-btn {
   display: block;
@@ -279,10 +286,11 @@ ul {
   letter-spacing: 0.06em;
   border-radius: 4px;
   border: none;
-  transition: var(--time-anim);
 }
-.hero-btn:hover {
+.hero-btn:hover,
+.hero-btn:focus {
   background-color: #188ce8;
+  box-shadow: var(--button-shadow);
 }
 .hero-btn:focus {
   background-color: var(--accent-color);
@@ -310,6 +318,8 @@ ul {
   width: 528px;
   height: 581px;
   background-color: #fff;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 .btn-close {
   display: flex;
@@ -323,13 +333,18 @@ ul {
   background-color: #fff;
   border-radius: 50%;
   border-color: rgba(0, 0, 0, 0.1);
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 .icon-close {
   width: 18px;
   height: 18px;
   background-color: #fff;
 }
-
+.btn-close:hover,
+.btn-close:focus {
+  border-color: rgb(24, 140, 232);
+}
 /* advantages-icons */
 
 .advantages-list {
@@ -635,6 +650,7 @@ ul {
 /* -------------OVERLAY---------- */
 .sub-overlay {
   position: relative;
+  overflow: hidden;
 }
 .overlay {
   position: absolute;
