@@ -131,9 +131,14 @@ ul {
 .nav-link:focus {
   color: var(--accent-color);
 }
-
+.current:hover {
+  color: #188ce8;
+}
 .current {
   color: var(--accent-color);
+  transition-property: color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .nav-link.current::after {
@@ -218,6 +223,8 @@ ul {
 .mail {
   display: flex;
   align-items: center;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 .phone:hover .contact-icon,
 .phone:focus .contact-icon,
@@ -309,17 +316,21 @@ ul {
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+  transform: scale(0.2);
 }
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: scale(0.2);
   transform: translate(-50%, -50%);
   width: 528px;
   height: 581px;
   background-color: #fff;
+
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
+  box-shadow: var(--box-shadow);
 }
 .btn-close {
   display: flex;
@@ -496,10 +507,10 @@ ul {
   height: 44px;
 
   border-radius: 50%;
-  transition: var(--time-anim);
+  transition: color var(--transition-duration) var(--transition-timing-function),
+    background-color var(--transition-duration) var(--transition-timing-function);
 }
 .socials-icon {
-  transition: var(--time-anim);
   fill: var(--socials-icon-color);
 }
 
@@ -528,10 +539,14 @@ ul {
   width: 170px;
   height: 92px;
   border: 1px solid var(--socials-icon-color);
-  transition: var(--time-anim);
+  transition-property: border-color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 .client-icon {
-  transition: var(--time-anim);
+  transition-property: fill;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
   fill: var(--socials-icon-color);
 }
 .clien-link:hover .client-icon,
@@ -552,7 +567,6 @@ ul {
 .footer-link {
   display: block;
   margin-bottom: 20px;
-  transition: var(--time-anim);
 }
 .logo-footer {
   color: var(--buuton-text-color);
@@ -568,7 +582,9 @@ ul {
 .footer-phone {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
-  transition: var(--time-anim);
+  transition: color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 .footer-item:first-child {
   margin-bottom: 9px;
@@ -736,12 +752,12 @@ ul {
 .social-link {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;g
   width: 44px;
   height: 44px;
   background-color: #44454e;
   border-radius: 50%;
-  transition: var(--time-anim);
+  transition: background-color var(--transition-duration) var(--transition-timing-function);
 }
 .social-link:hover,
 .social-link:focus {
