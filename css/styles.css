@@ -155,19 +155,13 @@ ul {
   padding-top: 32px;
   padding-bottom: 32px;
   position: relative;
-  transition-property: color, background-color, box-shadow;
+  transition-property: color;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
 }
 .contact-list {
   margin-left: auto;
 }
-/* .item-nav {
-  display: inline;
-}
-.item-nav:first-child {
-  margin-right: 50px;
-} */
 
 .mail {
   padding-top: 32px;
@@ -178,13 +172,6 @@ ul {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--prymary-text-color);
-}
-
-.footer-mail:hover,
-.footer-mail:focus,
-.mail:hover,
-.mail:focus {
-  color: var(--accent-color);
 }
 
 .phone {
@@ -197,6 +184,13 @@ ul {
   letter-spacing: 0.02em;
   color: var(--prymary-text-color);
 }
+.footer-mail:hover,
+.footer-mail:focus,
+.mail:hover,
+.mail:focus {
+  color: var(--accent-color);
+}
+
 .footer-phone:hover,
 .footer-phone:focus,
 .phone:hover,
@@ -207,26 +201,18 @@ ul {
   margin-right: 30px;
 }
 /* icon-header */
-.contact-icon {
-  fill: var(--prymary-text-color);
-}
+
 .contact-icon {
   margin-right: 10px;
+  fill: currentColor;
 }
 .phone,
 .mail {
   display: flex;
   align-items: center;
-  transition-property: color;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
+  transition: color var(--transition-duration) var(--transition-timing-function);
 }
-.phone:hover .contact-icon,
-.phone:focus .contact-icon,
-.mail:hover .contact-icon,
-.mail:focus .contact-icon {
-  fill: var(--accent-color);
-}
+
 .contact-list {
   display: flex;
   align-items: center;
@@ -266,7 +252,7 @@ ul {
   font-family: inherit;
   color: currentColor;
   cursor: pointer;
-  transition-property: color, background-color, box-shadow;
+  transition-property: background-color;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
 }
@@ -341,8 +327,6 @@ ul {
   background-color: #fff;
   border-radius: 50%;
   border-color: rgba(0, 0, 0, 0.1);
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
 }
 .icon-close {
   width: 18px;
@@ -502,22 +486,18 @@ ul {
   justify-content: center;
   width: 44px;
   height: 44px;
-
+  fill: var(--socials-icon-color);
   border-radius: 50%;
-  transition: color var(--transition-duration) var(--transition-timing-function),
-    background-color var(--transition-duration) var(--transition-timing-function);
+  transition: background-color var(--transition-duration) var(--transition-timing-function);
 }
 .socials-icon {
-  fill: var(--socials-icon-color);
+  transition: fill var(--transition-duration) var(--transition-timing-function);
 }
 
-.socials-link:hover .socials-icon,
-.socials-link:focus .socials-icon {
-  fill: var(--buuton-text-color);
-}
 .socials-link:hover,
 .socials-link:focus {
   background-color: var(--accent-color);
+  fill: var(--buuton-text-color);
 }
 
 /* ==========Постоянные клиенты=============== */
@@ -695,7 +675,6 @@ ul {
   transform: translateY(0%);
   opacity: 1;
   pointer-events: auto;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sub-div {
@@ -719,10 +698,11 @@ ul {
 }
 .work-link {
   border: 1px solid #eeeeee;
+  transition: box-shadow var(--transition-duration) var(--transition-timing-function);
 }
 .work-link:hover,
-.work-link:focus .work-link:hover .overlay {
-  border: 1px solid #eeeeee;
+.work-link:focus,
+.work-link:hover .overlay {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
